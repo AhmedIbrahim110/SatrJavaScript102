@@ -50,15 +50,17 @@ console.log(operation(5,2, sub));
 console.log(operation(5,2, mul));
 */
 //for each
-const colors = ['red', 'green', 'blue']
 
-const isContain = colors.includes('red')
-console.log(isContain);
+const primaryC = ['red', 'yellow', 'blue']
+const SecondaryC = ['green', 'orange', 'violet']
 
+const colors = primaryC.concat(SecondaryC, 'black', 'white')
+console.log(colors);
 
-/*const ages = [11, 13, 26, 15, 12]
-const hasAdult = ages.every(function(element){
-    return element >= 18
+/*
+const numbers = [11, 13, 26, 15, 12]
+const el = numbers.find(function(element){
+    return element % 3 === 0
 })
-console.log(hasAdult);
+console.log(el);
 */

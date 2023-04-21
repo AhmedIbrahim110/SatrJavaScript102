@@ -140,4 +140,3 @@ const car2 = new car('corolla', 'black', 0)
 console.log(car1.move(100));
 console.log(car1);
 */
-

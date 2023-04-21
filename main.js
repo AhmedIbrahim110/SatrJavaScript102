@@ -1,4 +1,5 @@
-/*const number = Math.abs(-9.12)
+/*
+const number = Math.abs(-9.12)
 console.log(number);
 
 const arr = [1, 4, -3, 9]
@@ -12,7 +13,7 @@ const intNumber = parseInt(str)
 console.log(intNumber + 1);
 const isInt = Number.isInteger(str)
 console.log(isInt);
-*/
+
 
 /*function square(number){
     if(isNaN(number))
@@ -26,9 +27,9 @@ console.log(randomNumber);
 
 let int = 12;
 console.log(int.toString(2));
-*/
+
 //call back:
-/*
+
 function sum(firstNumber, secondNumber){
     return firstNumber + secondNumber
 }
@@ -48,16 +49,16 @@ function operation(firstNumber, secondNumber, opCallback){
 console.log(operation(5,2, sum));
 console.log(operation(5,2, sub));
 console.log(operation(5,2, mul));
-*/
+
 //for each
-/*
+
 const primaryC = ['red', 'yellow', 'blue']
 const SecondaryC = ['green', 'orange', 'violet']
 
 const colors = primaryC.concat(SecondaryC, 'black', 'white')
 console.log(colors);
-*/
-/*
+
+
 const numbers = [11, 13, 26, 15, 12]
 const el = numbers.find(function(element){
     return element % 3 === 0
@@ -83,4 +84,59 @@ const total = numbers.reduce(function(accumulator, currentValue, index, array){
     return accumulator + currentValue
 })
 console.log(total);
+
+
+const car = {
+    name: 'camry',
+    color: 'white',
+    currentSpeed: 0,
+    move: function(speed){
+        this.currentSpeed = speed
+        return `The ${this.name} is moving at speed of ${this.currentSpeed}km per hour`
+    },
+    stop: function(){
+        this.currentSpeed = 0
+        console.log(`The ${this.name} stopped`);
+    }
+}
+const car2 = {
+    name: 'Corolla',
+    color: 'Black',
+    currentSpeed: 0,
+    move: function(speed){
+        this.currentSpeed = speed
+        return `The ${this.name} is moving at speed of ${this.currentSpeed}km per hour`
+    },
+    stop: function(){
+        this.currentSpeed = 0
+        console.log(`The ${this.name} stopped`);
+    }
+}
 */
+class car{
+    static numberOfCars = 0
+    #currentSpeed
+    constructor(name, color, currentSpeed){
+        this.name = name
+        this.color = color
+        this.#currentSpeed = currentSpeed
+        car.incrementNumberOfCars()
+    }
+    move(speed){
+        this.#currentSpeed = speed
+        return `The ${this.name} is moving at speed of ${this.#currentSpeed}km per hour`
+
+    }
+    stop(){
+        this.#currentSpeed = 0
+        return `The ${this.name} stopped`
+    }
+    static incrementNumberOfCars(){
+        car.numberOfCars++
+    }
+}
+const car1 = new car('camry', 'white', 0)
+const car2 = new car('corolla', 'black', 0)
+console.log(car1.move(100));
+console.log(car1);
+

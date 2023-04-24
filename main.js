@@ -140,3 +140,12 @@ const car2 = new car('corolla', 'black', 0)
 console.log(car1.move(100));
 console.log(car1);
 */
+let user1 = {
+    firstName: "Ahmed",
+    lastName: "Mohammed"
+}
+let printFullName = function(age){
+    console.log("Hello, " + this.firstName+" " +this.lastName+" .Your age is: "+age);
+}
+
+printFullName.call(user1, "25");
